@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-enum ColorAsset : String { case green
+enum ColorAsset : String {
+    case green
     case orange
     case purple
     

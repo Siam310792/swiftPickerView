@@ -49,9 +49,7 @@ extension ViewController {
         } else {
             alert.title = "Confirmation"
             alert.message = "Voulez-vous conserver la nouvelle couleur ?"
-            alert.addAction(UIAlertAction(title: "Oui", style: .default, handler: { action in
-                self.view.backgroundColor = newColor
-            }))
+            alert.addAction(UIAlertAction(title: "Oui", style: .default, handler: nil))
             alert.addAction(UIAlertAction(title: "Non", style: .cancel, handler: { action in
                 UIView.animate(withDuration: 0.5, animations: {
                     self.view.backgroundColor = lastColor

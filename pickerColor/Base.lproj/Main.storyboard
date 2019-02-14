@@ -51,35 +51,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="u7N-Dt-u9f">
-                                <rect key="frame" x="139.5" y="163.5" width="96" height="340"/>
+                                <rect key="frame" x="4" y="95.5" width="367" height="476"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vos-P5-umO">
-                                        <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
-                                        <state key="normal" image="greenIcon"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="367" height="95"/>
+                                        <state key="normal" title="Green" backgroundImage="greenIcon"/>
                                         <connections>
                                             <action selector="greenButton:" destination="LNW-de-QTE" eventType="touchUpInside" id="6xN-9V-Iia"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa8-4g-CvS">
-                                        <rect key="frame" x="0.0" y="122" width="96" height="96"/>
-                                        <state key="normal" image="orangeIcon"/>
+                                        <rect key="frame" x="0.0" y="190.5" width="367" height="95"/>
+                                        <state key="normal" title="Orange" backgroundImage="orangeIcon"/>
                                         <connections>
                                             <action selector="orangeButton:" destination="LNW-de-QTE" eventType="touchUpInside" id="eXn-LL-xch"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8h-cB-d38">
-                                        <rect key="frame" x="0.0" y="244" width="96" height="96"/>
-                                        <state key="normal" image="purpleIcon"/>
+                                        <rect key="frame" x="0.0" y="381" width="367" height="95"/>
+                                        <state key="normal" title="Purple" backgroundImage="purpleIcon"/>
                                         <connections>
                                             <action selector="purpleButton:" destination="LNW-de-QTE" eventType="touchUpInside" id="n0l-oJ-g5r"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="fa8-4g-CvS" firstAttribute="width" secondItem="u7N-Dt-u9f" secondAttribute="width" id="NO2-Al-UVH"/>
+                                    <constraint firstItem="vos-P5-umO" firstAttribute="width" secondItem="u7N-Dt-u9f" secondAttribute="width" id="RJJ-8E-Els"/>
+                                    <constraint firstItem="d8h-cB-d38" firstAttribute="width" secondItem="u7N-Dt-u9f" secondAttribute="width" id="gzE-Xy-BTH"/>
+                                    <constraint firstItem="vos-P5-umO" firstAttribute="height" secondItem="u7N-Dt-u9f" secondAttribute="height" multiplier="1/5" id="hlL-Oq-EKl"/>
+                                    <constraint firstItem="fa8-4g-CvS" firstAttribute="height" secondItem="vos-P5-umO" secondAttribute="height" id="rzf-61-umX"/>
+                                    <constraint firstItem="d8h-cB-d38" firstAttribute="height" secondItem="fa8-4g-CvS" secondAttribute="height" id="vKz-eA-emY"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="u7N-Dt-u9f" firstAttribute="centerX" secondItem="cmx-rG-i0O" secondAttribute="centerX" id="Ff8-Bg-eNM"/>
+                            <constraint firstItem="u7N-Dt-u9f" firstAttribute="height" secondItem="cmx-rG-i0O" secondAttribute="height" multiplier="5/7" id="NVN-Cf-cQD"/>
+                            <constraint firstItem="kkX-0C-1oz" firstAttribute="trailing" secondItem="u7N-Dt-u9f" secondAttribute="trailing" constant="4" id="Rhu-Hx-2Pa"/>
+                            <constraint firstItem="u7N-Dt-u9f" firstAttribute="leading" secondItem="kkX-0C-1oz" secondAttribute="leading" constant="4" id="TMH-U5-mvV"/>
                             <constraint firstItem="u7N-Dt-u9f" firstAttribute="centerY" secondItem="cmx-rG-i0O" secondAttribute="centerY" id="fww-2V-Nwj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kkX-0C-1oz"/>
@@ -91,9 +101,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="greenIcon" width="96" height="96"/>
-        <image name="orangeIcon" width="96" height="96"/>
-        <image name="purpleIcon" width="96" height="96.5"/>
+        <image name="greenIcon" width="25" height="25"/>
+        <image name="orangeIcon" width="25" height="25"/>
+        <image name="purpleIcon" width="25" height="25"/>
         <namedColor name="green">
             <color red="0.45882352941176469" green="0.74901960784313726" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
