@@ -21,15 +21,35 @@ class ViewController: UIViewController {
             destVC.delegate = self
         }
     }
-    
-
 }
 
 extension ViewController:ColorPickerViewDelegate {
-    func userDidChooseColor(color: UIColor) {
-        self.view.backgroundColor = color
-        self.dismiss(animated: true, completion: nil)
+    func userDidChooseColor(newColor: UIColor) {
+        self.dismiss(animated: true, completion: {
+            let lastColor = self.view.backgroundColor!
+            UIView.animate(withDuration: 0.2, animations: {
+                self.view.backgroundColor = newColor
+            })
+            
+            self.userConfirmChoose(lastColor: lastColor, newColor: newColor)
+        })
+        
+        
     }
-    
+
+    func userConfirmChoose(lastColor:UIColor, newColor:UIColor) {
+        let alert = UIAlertController(title: "Confirmation", message: "Voulez-vous conserver la nouvelle couleur ?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Oui", style: .default, handler: { action in
+            self.view.backgroundColor = newColor
+        }))
+        alert.addAction(UIAlertAction(title: "Non", style: .cancel, handler: { action in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.view.backgroundColor = lastColor
+            })
+        }))
+        
+        self.present(alert, animated: true)
+    }
     
 }

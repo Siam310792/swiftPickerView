@@ -28,18 +28,18 @@ class ColorPickerViewController: UIViewController {
      */
     
     @IBAction func greenButton(_ sender: Any) {
-        delegate?.userDidChooseColor(color: ColorAsset.green.color)
+        delegate?.userDidChooseColor(newColor: ColorAsset.green.color)
     }
     
     @IBAction func orangeButton(_ sender: Any) {
-        delegate?.userDidChooseColor(color: ColorAsset.orange.color)
+        delegate?.userDidChooseColor(newColor: ColorAsset.orange.color)
     }
     
     @IBAction func purpleButton(_ sender: Any) {
-        delegate?.userDidChooseColor(color: ColorAsset.purple.color)
+        delegate?.userDidChooseColor(newColor: ColorAsset.purple.color)
     }
 }
 
 protocol ColorPickerViewDelegate {
-    func userDidChooseColor(color: UIColor)
+    func userDidChooseColor(newColor: UIColor)
 }
