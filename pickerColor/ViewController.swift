@@ -38,17 +38,24 @@ extension ViewController:ColorPickerViewDelegate {
     }
 
     func userConfirmChoose(lastColor:UIColor, newColor:UIColor) {
-        let alert = UIAlertController(title: "Confirmation", message: "Voulez-vous conserver la nouvelle couleur ?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Oui", style: .default, handler: { action in
-            self.view.backgroundColor = newColor
-        }))
-        alert.addAction(UIAlertAction(title: "Non", style: .cancel, handler: { action in
-            UIView.animate(withDuration: 0.5, animations: {
-                self.view.backgroundColor = lastColor
-            })
-        }))
-        
+        if (lastColor == newColor) {
+            alert.title = "Erreur"
+            alert.message = "Votre fond d'écran est déjà de cette couleur !"
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler:nil))
+        } else {
+            alert.title = "Confirmation"
+            alert.message = "Voulez-vous conserver la nouvelle couleur ?"
+            alert.addAction(UIAlertAction(title: "Oui", style: .default, handler: { action in
+                self.view.backgroundColor = newColor
+            }))
+            alert.addAction(UIAlertAction(title: "Non", style: .cancel, handler: { action in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view.backgroundColor = lastColor
+                })
+            }))
+        }
         self.present(alert, animated: true)
     }
     
